@@ -21,6 +21,29 @@
   }
   headerToggleBtn.addEventListener('click', headerToggle);
 
+ function copyCode() {
+    const codeBlock = document.getElementById('code-block');
+    const range = document.createRange();
+    range.selectNode(codeBlock);
+    window.getSelection().removeAllRanges();  // Clear current selection
+    window.getSelection().addRange(range);  // Select the text
+    try {
+      document.execCommand('copy');
+      // Change the icon to 'checked' after copy
+      const copyButton = document.querySelector('.copy-button i');
+      copyButton.classList.remove('fa-copy');
+      copyButton.classList.add('fa-check');
+      // Reset the icon back to 'copy' after 2 seconds
+      setTimeout(() => {
+        copyButton.classList.remove('fa-check');
+        copyButton.classList.add('fa-copy');
+      }, 2000);
+    } catch (err) {
+      alert('Failed to copy code');
+    }
+    window.getSelection().removeAllRanges();  // Deselect the text
+  }
+
   /**
    * Hide mobile nav on same-page/hash links
    */
@@ -30,7 +53,6 @@
         headerToggle();
       }
     });
-
   });
 
   /**
@@ -225,5 +247,35 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+
+  // Scroll Progress Bar
+  var pBar = $("#scrollProgress #innerBar");
+  var scrollDistance = $("html").height() - $(window).innerHeight();
+  $(window).scroll(function(){
+    scrollPBar();
+  });
+
+  function scrollPBar(){
+    scrollDistance = $("html").height() - $(window).innerHeight();
+    var percent = $(window).scrollTop() * 100 / scrollDistance;
+    pBar.css("width", percent + "%");
+  }
+
+  scrollPBar();
+
+  /* TODO : Complete
+  $("section").each(function(){
+    console.log($(this).offset().top * 100 / $("html").height() + "%");
+    $("#scrollProgress").append($("<span></span>").css({
+      position:"absolute",
+      width:"5px",
+      height:"inherit",
+      backgroundColor:"blue",
+      top:0,
+      left:$(this).offset().top * 100 / $("html").height() + "%",
+      display:"block"
+    }));
+  });
+  */
 
 })();
