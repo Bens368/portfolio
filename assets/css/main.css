@@ -1455,12 +1455,6 @@ section,
     max-width: 1200px; /* Adjust as needed */
 }
 
-.img-fluid {
-    max-width: 45%; /* Adjust as needed */
-    height: auto;
-    margin: 10px;
-}
-
 .scrollProgress {
   position: fixed;
   width: 100%;
