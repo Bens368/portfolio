@@ -278,4 +278,47 @@
   });
   */
 
+ document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const form = event.target;
+    const loading = form.querySelector('.loading');
+    const errorMessage = form.querySelector('.error-message');
+    const sentMessage = form.querySelector('.sent-message');
+
+    loading.style.display = 'block';
+    loading.textContent = 'Loading...';
+    errorMessage.style.display = 'none';
+    sentMessage.style.display = 'none';
+
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      loading.style.display = 'none';
+      if (response.ok) {
+        sentMessage.style.display = 'block';
+        form.reset();
+        setTimeout(() => {
+          sentMessage.style.display = 'none';
+        }, 3000); // Hide the message after 3 seconds
+      } else {
+        return response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            errorMessage.textContent = data["errors"].map(error => error["message"]).join(", ");
+          } else {
+            errorMessage.textContent = 'Il y a eu un problème avec votre soumission de formulaire';
+          }
+          errorMessage.style.display = 'block';
+        });
+      }
+    }).catch(error => {
+      loading.style.display = 'none';
+      errorMessage.textContent = 'Il y a eu un problème avec votre soumission de formulaire';
+      errorMessage.style.display = 'block';
+    });
+  });
+
 })();
