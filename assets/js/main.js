@@ -278,7 +278,7 @@
   });
   */
 
- document.getElementById('contact-form').addEventListener('submit', function(event) {
+   document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
     const form = event.target;
     const loading = form.querySelector('.loading');
@@ -305,14 +305,8 @@
           sentMessage.style.display = 'none';
         }, 3000); // Hide the message after 3 seconds
       } else {
-        return response.json().then(data => {
-          if (Object.hasOwn(data, 'errors')) {
-            errorMessage.textContent = data["errors"].map(error => error["message"]).join(", ");
-          } else {
-            errorMessage.textContent = 'Il y a eu un problème avec votre soumission de formulaire';
-          }
-          errorMessage.style.display = 'block';
-        });
+        errorMessage.textContent = 'Il y a eu un problème avec votre soumission de formulaire';
+        errorMessage.style.display = 'block';
       }
     }).catch(error => {
       loading.style.display = 'none';
