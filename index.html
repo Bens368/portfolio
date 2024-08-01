@@ -485,7 +485,7 @@
       </div>
 
       <div class="col-lg-8">
-        <form action="https://formspree.io/f/xblrooyq" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+        <form action="https://formspree.io/f/xblrooyq" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200" id="contact-form">
           <div class="row gy-4">
 
             <div class="col-md-6">
@@ -505,9 +505,9 @@
             </div>
 
             <div class="col-md-12 text-center">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Votre message a été envoyé. Merci !</div>
+              <div class="loading" style="display:none;">Loading</div>
+              <div class="error-message" style="display:none;color:red;"></div>
+              <div class="sent-message" style="display:none;color:green;">Votre message a été envoyé. Merci !</div>
 
               <button type="submit">Envoyer</button>
             </div>
@@ -521,7 +521,6 @@
   </div>
 
 </section><!-- /Contact Section -->
-
 
   </main>
 
