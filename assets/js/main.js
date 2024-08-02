@@ -281,7 +281,7 @@
   /**
    * Handle form submission with Formspree
    */
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
+   document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const form = event.target;
@@ -303,11 +303,10 @@
       loadingElement.style.display = 'none';
       if (response.ok) {
         sentElement.style.display = 'block';
-        form.reset();
       } else {
         sentElement.style.display = 'block';
-        form.reset();
       }
+      form.reset();
     }).catch(error => {
       loadingElement.style.display = 'none';
       sentElement.style.display = 'block';
