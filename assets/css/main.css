@@ -1530,6 +1530,11 @@ pre {
     border-bottom-right-radius: 5px;
 }
 
+.error-message {
+    display: none !important;
+    color: red;
+}
+
 }/*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
