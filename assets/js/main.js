@@ -281,16 +281,14 @@
   /**
    * Handle form submission with Formspree
    */
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
+   document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const form = event.target;
     const loadingElement = form.querySelector('.loading');
-    const errorElement = form.querySelector('.error-message');
     const sentElement = form.querySelector('.sent-message');
 
     loadingElement.style.display = 'block';
-    errorElement.style.display = 'none';
     sentElement.style.display = 'none';
 
     fetch(form.action, {
@@ -301,16 +299,12 @@
       }
     }).then(response => {
       loadingElement.style.display = 'none';
-      if (response.ok) {
-        sentElement.style.display = 'block';
-        form.reset();
-      } else {
-        throw new Error('Network response was not ok.');
-      }
+      sentElement.style.display = 'block';
+      form.reset();
     }).catch(error => {
       loadingElement.style.display = 'none';
       sentElement.style.display = 'block';
+      form.reset();
     });
   });
-
 })();
