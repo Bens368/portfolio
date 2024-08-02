@@ -281,36 +281,38 @@
   /**
    * Handle form submission with Formspree
    */
-   document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
 
-    const form = event.target;
-    const loadingElement = form.querySelector('.loading');
-    const errorElement = form.querySelector('.error-message');
-    const sentElement = form.querySelector('.sent-message');
+      const form = event.target;
+      const loadingElement = form.querySelector('.loading');
+      const errorElement = form.querySelector('.error-message');
+      const sentElement = form.querySelector('.sent-message');
 
-    loadingElement.style.display = 'block';
-    errorElement.style.display = 'none';
-    sentElement.style.display = 'none';
+      loadingElement.style.display = 'block';
+      errorElement.style.display = 'none';
+      sentElement.style.display = 'none';
 
-    fetch(form.action, {
-      method: form.method,
-      body: new FormData(form),
-      headers: {
-        'Accept': 'application/json'
-      }
-    }).then(response => {
-      loadingElement.style.display = 'none';
-      if (response.ok) {
+      fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        loadingElement.style.display = 'none';
+        if (response.ok) {
+          sentElement.style.display = 'block';
+        } else {
+          // Always show success message for demonstration purposes
+          sentElement.style.display = 'block';
+        }
+        form.reset();
+      }).catch(error => {
+        loadingElement.style.display = 'none';
+        // Always show success message even if an error occurs
         sentElement.style.display = 'block';
-      } else {
-        sentElement.style.display = 'block';
-      }
-      form.reset();
-    }).catch(error => {
-      loadingElement.style.display = 'none';
-      sentElement.style.display = 'block';
-      form.reset();
+        form.reset();
+      });
     });
-  });
 })();
