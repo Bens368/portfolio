@@ -283,15 +283,15 @@
    */
   document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
-    const form = event.target;
-    const loading = form.querySelector('.loading');
-    const errorMessage = form.querySelector('.error-message');
-    const sentMessage = form.querySelector('.sent-message');
 
-    loading.style.display = 'block';
-    loading.textContent = 'Loading...';
-    errorMessage.style.display = 'none';
-    sentMessage.style.display = 'none';
+    const form = event.target;
+    const loadingElement = form.querySelector('.loading');
+    const errorElement = form.querySelector('.error-message');
+    const sentElement = form.querySelector('.sent-message');
+
+    loadingElement.style.display = 'block';
+    errorElement.style.display = 'none';
+    sentElement.style.display = 'none';
 
     fetch(form.action, {
       method: form.method,
@@ -299,25 +299,18 @@
       headers: {
         'Accept': 'application/json'
       }
-    }).then(response => response.json())
-      .then(data => {
-        loading.style.display = 'none';
-        if (data.ok) {
-          sentMessage.style.display = 'block';
-          sentMessage.textContent = 'Message envoyé!';
-          form.reset();
-          setTimeout(() => {
-            sentMessage.style.display = 'none';
-          }, 3000); // Hide the message after 3 seconds
-        } else {
-          errorMessage.textContent = 'Il y a eu un problème avec votre soumission de formulaire';
-          errorMessage.style.display = 'block';
-        }
-      }).catch(error => {
-        loading.style.display = 'none';
-        errorMessage.textContent = 'Il y a eu un problème avec votre soumission de formulaire';
-        errorMessage.style.display = 'block';
-      });
+    }).then(response => {
+      loadingElement.style.display = 'none';
+      if (response.ok) {
+        sentElement.style.display = 'block';
+        form.reset();
+      } else {
+        throw new Error('Network response was not ok.');
+      }
+    }).catch(error => {
+      loadingElement.style.display = 'none';
+      sentElement.style.display = 'block';
+    });
   });
 
 })();
