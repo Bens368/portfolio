@@ -5,6 +5,7 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
 (function() {
   "use strict";
 
@@ -281,49 +282,48 @@
    * Handle form submission with Formspree
    */
   document.getElementById('contact-form').addEventListener('submit', function(event) {
-  event.preventDefault();
-  const form = event.target;
-  const loading = form.querySelector('.loading');
-  const errorMessage = form.querySelector('.error-message');
-  const sentMessage = form.querySelector('.sent-message');
+    event.preventDefault();
+    const form = event.target;
+    const loading = form.querySelector('.loading');
+    const errorMessage = form.querySelector('.error-message');
+    const sentMessage = form.querySelector('.sent-message');
 
-  loading.style.display = 'block';
-  loading.textContent = 'Loading...';
-  errorMessage.style.display = 'none';
-  sentMessage.style.display = 'none';
+    loading.style.display = 'block';
+    loading.textContent = 'Loading...';
+    errorMessage.style.display = 'none';
+    sentMessage.style.display = 'none';
 
-  fetch(form.action, {
-    method: form.method,
-    body: new FormData(form),
-    headers: {
-      'Accept': 'application/json'
-    }
-  }).then(response => {
-    loading.style.display = 'none';
-    if (!response.ok) {
-      return response.json().then(data => {
-        throw new Error(data.message || 'Il y a eu un problème avec votre soumission de formulaire');
-      });
-    }
-    return response.json();
-  }).then(data => {
-    if (data.ok) {
-      sentMessage.style.display = 'block';
-      sentMessage.textContent = 'Votre message a été envoyé. Merci !';
-      form.reset();
-      setTimeout(() => {
-        sentMessage.style.display = 'none';
-      }, 3000); // Cacher le message après 3 secondes
-    } else {
-      errorMessage.textContent = 'Il y a eu un problème avec votre soumission de formulaire';
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      loading.style.display = 'none';
+      if (!response.ok) {
+        return response.json().then(data => {
+          throw new Error(data.message || 'Il y a eu un problème avec votre soumission de formulaire');
+        });
+      }
+      return response.json();
+    }).then(data => {
+      if (data.ok) {
+        sentMessage.style.display = 'block';
+        sentMessage.textContent = 'Message envoyé!';
+        form.reset();
+        setTimeout(() => {
+          sentMessage.style.display = 'none';
+        }, 3000); // Hide the message after 3 seconds
+      } else {
+        errorMessage.textContent = 'Il y a eu un problème avec votre soumission de formulaire';
+        errorMessage.style.display = 'block';
+      }
+    }).catch(error => {
+      loading.style.display = 'none';
+      errorMessage.textContent = error.message || 'Il y a eu un problème avec votre soumission de formulaire';
       errorMessage.style.display = 'block';
-    }
-  }).catch(error => {
-    loading.style.display = 'none';
-    errorMessage.textContent = error.message || 'Il y a eu un problème avec votre soumission de formulaire';
-    errorMessage.style.display = 'block';
+    });
   });
-});
-
 
 })();
