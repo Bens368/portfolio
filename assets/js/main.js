@@ -281,27 +281,43 @@
   /**
    * Handle form submission with Formspree
    */
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-  event.preventDefault();
-  const form = event.target;
-  const loading = form.querySelector('.loading');
-  const sentMessage = form.querySelector('.sent-message');
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const form = event.target;
+    const loading = form.querySelector('.loading');
+    const errorMessage = form.querySelector('.error-message');
+    const sentMessage = form.querySelector('.sent-message');
 
-  // Affiche le message de chargement
-  loading.style.display = 'block';
-  sentMessage.style.display = 'none';
+    loading.style.display = 'block';
+    loading.textContent = 'Loading...';
+    errorMessage.style.display = 'none';
+    sentMessage.style.display = 'none';
 
-  // Simule un délai de 3 secondes avant d'afficher le message de succès
-  setTimeout(() => {
-    loading.style.display = 'none';
-    sentMessage.style.display = 'block';
-    form.reset();
-
-    // Cache le message de succès après 3 secondes
-    setTimeout(() => {
-      sentMessage.style.display = 'none';
-    }, 3000);
-  }, 3000);
-});
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => response.json())
+      .then(data => {
+        loading.style.display = 'none';
+        if (data.ok) {
+          sentMessage.style.display = 'block';
+          sentMessage.textContent = 'Message envoyé!';
+          form.reset();
+          setTimeout(() => {
+            sentMessage.style.display = 'none';
+          }, 3000); // Hide the message after 3 seconds
+        } else {
+          errorMessage.textContent = 'Il y a eu un problème avec votre soumission de formulaire';
+          errorMessage.style.display = 'block';
+        }
+      }).catch(error => {
+        loading.style.display = 'none';
+        errorMessage.textContent = 'Il y a eu un problème avec votre soumission de formulaire';
+        errorMessage.style.display = 'block';
+      });
+  });
 
 })();
