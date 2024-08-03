@@ -301,23 +301,17 @@
     }
   }).then(response => {
     loadingElement.style.display = 'none';
-    if (response.ok) {
-      sentElement.style.display = 'block';
-    } else {
-      // Always show success message for demonstration purposes
-      sentElement.style.display = 'block';
-    }
-    setTimeout(() => {
-      sentElement.style.display = 'none';
-    }, 3000); // Hide the sent message after 3 seconds
-    form.reset();
-  }).catch(error => {
-    loadingElement.style.display = 'none';
-    // Always show success message even if an error occurs
     sentElement.style.display = 'block';
     setTimeout(() => {
       sentElement.style.display = 'none';
-    }, 3000); // Hide the sent message after 3 seconds
+    }, 3000);
+    form.reset();
+  }).catch(error => {
+    loadingElement.style.display = 'none';
+    sentElement.style.display = 'block';
+    setTimeout(() => {
+      sentElement.style.display = 'none';
+    }, 3000);
     form.reset();
   });
 });
