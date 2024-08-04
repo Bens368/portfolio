@@ -185,11 +185,14 @@ combined_df.to_csv('stock_data_with_dates.csv', index=False)
                 Puis rendez-vous directement dans votre bucket et cliquez sur importer des fichiers :
               </p>
               <div class="single-image">
-                <img src="assets/img/portfolio/bucket_import.png" alt="Importer des fichiers dans le bucket" class="img-fluid">
+                <img src="assets/img/portfolio/bq2_1.png" alt="Importer des fichiers dans le bucket" class="img-fluid">
               </div>
               <p>
                 Importez ensuite le fichier dans le bucket créé en partie 1. Puis créez une table dans BigQuery :
               </p>
+              <div class="single-image">
+                <img src="assets/img/portfolio/bq2_2.png" alt="Importer des fichiers dans le bucket" class="img-fluid">
+              </div>
               <h3>Récupérer la donnée</h3>
               <p>
                 Notre table est prête, nous devons maintenant créer une vue. Qu’est-ce qu’une vue, me demandez-vous ? La vue est une sorte de table créée à partir d’une ou plusieurs tables déjà existantes. Autrement dit, elle contient des données croisées ou calculées et est donc le résultat d’une requête SQL. Je n’importe aucune donnée, je crée simplement de l’information à partir de celle déjà présente.
@@ -214,7 +217,7 @@ FROM `bq-stock-demo.data_warehouse.stocks_progression_with_dates`
                 En exécutant la requête, une vue apparaîtra sous le nom de latest_update_view :
               </p>
               <div class="single-image">
-                <img src="assets/img/portfolio/view_latest_update.png" alt="Vue de la dernière mise à jour" class="img-fluid">
+                <img src="assets/img/portfolio/bq2_4.png" alt="Vue de la dernière mise à jour" class="img-fluid">
               </div>
               <p>
                 Nous nous servirons de cette vue pour cibler dynamiquement la date la plus récente que contient la table. Si vous voulez voir la date la plus récente, cliquez simplement sur votre vue > cliquez sur vos deux variables > une requête va se générer. En l’exécutant, vous obtenez la vue avec la date souhaitée. À noter que chaque fois que la vue sera interrogée, elle sera mise à jour avec la dernière date dans les données.
@@ -313,6 +316,9 @@ def main(event, context):
               <p>
                 Il faut ensuite créer une seconde fonction qui, lorsque le nouveau fichier arrive dans le bucket, est ajoutée à la table. On crée une nouvelle Cloud Function de la même manière que la première à l’exception du type de déclencheur qui est cette fois-ci cloud storage et finalized, c’est-à-dire que la fonction se déclenche à l’arrivée d’un nouveau fichier dans le bucket :
               </p>
+              <div class="single-image">
+                <img src="assets/img/portfolio/bq2_5.png" alt="Importer des fichiers dans le bucket" class="img-fluid">
+              </div>
               <div class="code-container">
                 <div class="code-header">
                   <span class="code-language">Python</span>
@@ -365,19 +371,17 @@ def load_csv_to_bigquery(event, context):
               <p>
                 Done ! Vous pouvez aller dans cloud scheduler et « forcer l’exécution » de stock_demo_function pour tester dès maintenant si le processus fonctionne. Une fois exécuté, rendez-vous dans BigQuery et observez si vos données sont à jour. Vous pouvez voir rapidement ceci en affichant votre vue via une requête :
               </p>
+              <div class="single-image">
+                <img src="assets/img/portfolio/bq2_6.png" alt="Importer des fichiers dans le bucket" class="img-fluid">
+              </div>
               <p>
                 Si ce n’est pas le cas, allez premièrement vérifier que dans votre bucket un nouveau fichier soit présent avec la date d’aujourd’hui du style stock_data_20240101000000. Vérifiez également le journal (log) en vous rendant dans logs explorer depuis la barre de recherche.
               </p>
+              <h3>Conclusion</h3>
               <p>
                 Pour résumer la succession de mécanismes, on a une vue qui, chaque fois qu’elle est appelée, fournit la date la plus récente de notre table stocks_progression_with_dates. Cette date est le point de départ de notre requête API contenu dans la Cloud Function. Les données sont récupérées à partir de cette date et jusqu’à aujourd’hui. D’autre part, c’est le Cloud Scheduler qui active la Cloud Function de manière récurrente. Si on programme ça de manière hebdomadaire, par exemple tous les jeudis, on va récupérer la donnée de jeudi dernier jusqu’à aujourd’hui. Pour finir, la deuxième Cloud Function sert quant à elle à ajouter la donnée à notre table stock_progression_with_dates. Pas besoin cette fois-ci de Cloud Scheduler pour solliciter cette fonction. Elle se déclenchera automatiquement lorsque un nouveau fichier arrive dans le bucket.
               </p>
-              <h3>Conclusion</h3>
-              <p>
-                Google Cloud est une plateforme qui regorge de ressources, à tel point qu'il est au début difficile de s'y retrouver. Mais une fois assimilé, ces outils permettent de réaliser à peu près tout ce qu'on aimerait faire avec de la donnée, que ce soit l'importer, la transformer ou la stocker. Nous avons exploré dans cette démonstration une partie de ces outils, mais ne vous méprenez pas, ce n'est qu'une infime partie des outils disponibles. En revanche, non seulement il faut savoir maîtriser la plateforme et ses outils, mais il y a bien évidemment aussi un coût qui, à mesure que l'on traite de grandes quantités de données, peut augmenter.
-              </p>
-              <p>
-                Ceci étant dit, un Data Warehouse, peu importe si la plateforme utilisée est Google Cloud ou une autre, constitue selon moi un excellent investissement de temps et d’argent. La raison étant que c’est en quelque sorte une porte d'entrée à une amélioration constante de l’utilisation de vos données et donc de vos processus. Par exemple, une fois vos données centralisées, et vos analyses faites, vous pouvez aller plus loin en créant des modèles statistiques sur mesure, tels que des modèles prédictifs, pour mieux comprendre les tendances et les impacts de différentes actions. Dans un monde toujours plus compétitif, ce genre d'avantage concurrentiel n'est pas négligeable.
-              </p><br><br><br>
+              <br><br><br>
             </div>
           </div>
 
