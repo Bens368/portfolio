@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Centralisation de Données et Architecture Partie II</title>
+  <title>Formation - BigQuery</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism.min.css">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -52,6 +52,14 @@
     width: 0%;
   }
   </style>
+
+  <!-- =======================================================
+  * Template Name: MyResume
+  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+  * Updated: Jun 14 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
 <body class="index-page">
@@ -65,9 +73,22 @@
 
   <main class="main">
     <!-- Contenu du main -->
+  </main>
+</body>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex flex-column justify-content-center">
+      <i class="header-toggle d-xl-none bi bi-list"></i>
+  </header>
+
+  <main class="main">
+
+    <!-- Portfolio Details Section -->
     <section id="portfolio-details" class="portfolio-details section">
 
       <div class="container" data-aos="fade-up">
+
         <div class="portfolio-details-slider swiper init-swiper">
           <script type="application/json" class="swiper-config">
             {
@@ -87,13 +108,18 @@
                 "clickable": true
               }
             }
-          </script>
-        </div>
-      </div>
+            </script>
 
-      <div class="row justify-content-between gy-4 mt-4">
-        <div class="col-lg-8" data-aos="fade-up">
-          <div class="portfolio-description"><br>
+            <div class="single-image">
+              <img src="assets/img/portfolio/Bigquery.png" alt="cover image de la ormation bigquery" class="img-fluid" style="max-width: 600px; height: auto; margin-left: -350px;">
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-between gy-4 mt-4">
+
+          <div class="col-lg-8" data-aos="fade-up">
+            <div class="portfolio-description"><br>
             <h1>Centralisation de Données et Architecture Partie II</h1><br><br>
             <p>
               Centraliser des données est une chose, automatiser la mise à jour de ces dernières en est une autre. Nous avons vu dans une première démonstration comment centraliser des données dans Google Cloud BigQuery. Mais ne nous arrêtons pas en si bon chemin !
@@ -359,31 +385,31 @@ def load_csv_to_bigquery(event, context):
               Ceci étant dit, un Data Warehouse, peu importe si la plateforme utilisée est Google Cloud ou une autre, constitue selon moi un excellent investissement de temps et d’argent. La raison étant que c’est en quelque sorte une porte d'entrée à une amélioration constante de l’utilisation de vos données et donc de vos processus. Par exemple, une fois vos données centralisées, et vos analyses faites, vous pouvez aller plus loin en créant des modèles statistiques sur mesure, tels que des modèles prédictifs, pour mieux comprendre les tendances et les impacts de différentes actions. Dans un monde toujours plus compétitif, ce genre d'avantage concurrentiel n'est pas négligeable.
             </p><br><br><br>
 
-            <h4>Lexique</h4><br>
-            <ul>
-              <li><em><b>Requête :</b> un appel à l'API pour récupérer une certaine donnée.</em></li>
-              <li><em><b>Réponse :</b> Les données retournées suite à la requête ou l'erreur dans le cas échéant.</em></li>
-              <li><em><b>Base url :</b> l'url commun à toutes les requêtes d'une certaine API. Exemple : https://api.polygon.io</em></li>
-              <li><em><b>Endpoint :</b> Tout ce qui suit le base url et qui permet d’atteindre un certain emplacement ou une certaine action spécifique dans l’API. Exemple : 2024-03-15/2024-06-15 permet d'atteindre pour l’action Apple, tous les prix organisés par jour entre mars et juin 2024.</em></li>
-              <li><em><b>Cloud Function :</b> outil de création de fonction. Sert ici à créer une fonction de requête API, ensuite automatisée via Cloud Scheduler.</em></li>
-            </ul>
+                  </div>
           </div>
+
+
+
+
+          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-info">
+              <h3>informations</h3>
+              <ul>
+                <li><strong>Categorie</strong>Machine Learning, Marketing, inférence et prédiction</li>
+                <li><strong>Écrit par</strong>Sacha Benadiba</li>
+                <li><strong>Dernière mise à jour de l'article</strong> 20 Septembre, 2023</li>
+                <li><strong>URL du projet</strong> <a href="https://www.grenier.qc.ca/actualites/37278/click-mortar-mise-sur-le-mmm-en-reponse-a-la-loi-25">www.grenier.qc.ca</a></li>
+                <li><a href="#" class="btn-visit align-self-start">Visit Website</a></li>
+              </ul>
+            </div>
+          </div>
+
         </div>
 
-        <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-          <div class="portfolio-info">
-            <h3>informations</h3>
-            <ul>
-              <li><strong>Categorie</strong>Machine Learning, Marketing, inférence et prédiction</li>
-              <li><strong>Client</strong> ASU Company</li>
-              <li><strong>Dernière mise à jour de l'article</strong> 20 Septembre, 2023</li>
-              <li><strong>URL du projet</strong> <a href="https://www.grenier.qc.ca/actualites/37278/click-mortar-mise-sur-le-mmm-en-reponse-a-la-loi-25">www.grenier.qc.ca</a></li>
-              <li><a href="#" class="btn-visit align-self-start">Visit Website</a></li>
-            </ul>
-          </div>
-        </div>
       </div>
-    </section>
+
+    </section><!-- /Portfolio Details Section -->
+
   </main>
 
   <footer id="footer" class="footer position-relative">
@@ -402,6 +428,10 @@ def load_csv_to_bigquery(event, context):
           <span>Copyright</span> <strong class="px-1 sitename">Alex Smith</strong> <span>All Rights Reserved</span>
         </div>
         <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
           Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
       </div>
@@ -436,8 +466,10 @@ def load_csv_to_bigquery(event, context):
     var scrolled = (winScroll / height) * 100;
     document.getElementById("innerBar").style.width = scrolled + "%";
   };
+</script>
 
-  function copyCode() {
+<script>
+function copyCode() {
     const codeBlock = document.getElementById('code-block');
     const range = document.createRange();
     range.selectNode(codeBlock);
@@ -462,7 +494,8 @@ def load_csv_to_bigquery(event, context):
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-python.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-javascript.min.js"></script>
 
 </body>
 
