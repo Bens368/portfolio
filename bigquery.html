@@ -301,25 +301,22 @@ def main_function(data, context):
               <p>
                  Nous avons désormais une fonction qui récupère la donnée et la place dans un environnement temporaire par lequel la donnée va transiger. Reste à rendre le tout autonome pour de bon. Pour cela, deux options : écraser la donnée et la réimporter à jour ou ajouter la nouvelle donnée à celle déjà présente dans notre table.
              </p><br><br><br>
-             <h3>3.	Automatiser l’import de données : option 1</h3><br>
+             <h3>3. Automatiser l'import de données</h3><br>
              <p>
-                Cette option se veut plus simple à exécuter et plus robuste face aux éventuelles erreurs. Par contre, elle sera rapidement coûteuse s'il s'agit de grandes quantités de données. Pour ne pas surcharger en information cette démo, nous nous contenterons ici de cette première option. Une autre démo sera spécifiquement dédiée à la seconde, plus complexe, mais plus puissante.
-             </p>
-             <p>
-                Rendez-vous à nouveau dans la barre de recherche, puis dans Cloud Scheduler. Créez une tâche et nommez-la. Sélectionnez une fréquence à laquelle la fonction sera lancée au format unix-cron. Par exemple, 0 23 * * * vaut pour tous les jours à 23h. Cliquez sur « continuer », puis pub/sub pour le type de cible et votre sujet crée plus tôt.
+                Rendez-vous à nouveau dans la barre de recherche, puis dans Cloud Scheduler. Créez une tâche et nommez-la. Sélectionnez une fréquence à laquelle la fonction sera lancée au format unix-cron. Par exemple, 0 23 * * * vaut pour tous les jours à 23h. Cliquez sur « continuer », puis pub/sub pour le type de cible et votre sujet crée plus tôt :
              </p>
              <div class="multiple-image">
                  <img src="assets/img/portfolio/bq_4.png" alt="configuration cloud scheduler 1" class="img-fluid" style="max-width: 300px; height: auto;">
                  <img src="assets/img/portfolio/bq_5.png" alt="configuration cloud scheduler 2" class="img-fluid" style="max-width: 400px; height: auto;">
              </div><br><br>
              <p>
-Forcez l'exécution pour lancer une première fois la fonction dès maintenant (en cliquant sur les 3 petites points à droite). Vous pouvez ensuite retourner au bucket pour vérifier que le fichier csv fraichement crée par la fonction est présent :
+                Forcez l'exécution pour lancer une première fois la fonction dès maintenant (en cliquant sur les 3 petites points à droite). Vous pouvez ensuite retourner au bucket pour vérifier que le fichier csv fraichement crée par la fonction est présent :
              </p>
             <div class="single-image">
               <img src="assets/img/portfolio/bq_6.png" alt="bucket avec les données" class="img-fluid" style="max-width: 700px; height: auto;">
             </div>
             <p>
-               Les préparatifs sont finis, on peut aller directement dans BigQuery. En revanche, quelques clarifications ne seraient pas trop demandées à ce point du processus. Pour faire simple, BigQuery est l'environnement Google Cloud qui sert à créer un ensemble de données. Dans des cas réels de centralisation de données, on a généralement affaire à des données variées et en quantités. Comme toute bonne base de données, il est conseillé de faire un schéma au préalable des différentes tables qui organiseront le Warehouse et leurs relations. Vous l’aurez compris en regardant l’image, il faut créer un ensemble de données :
+               Les préparatifs sont finis, on peut aller directement dans BigQuery. En revanche, quelques clarifications ne seraient pas trop demandées à ce point du processus. Pour faire simple, BigQuery est l'environnement Google Cloud qui sert à créer un ensemble de données. Dans des cas réels de centralisation de données, on a généralement affaire à des données variées et en quantités. Comme toute bonne base de données, il est conseillé de faire un schéma au préalable des différentes tables qui organiseront le Warehouse et leurs relations. Vous l'aurez compris en regardant l'image, il faut créer un ensemble de données :
             </p>
             <div class="multiple-image">
                 <img src="assets/img/portfolio/bq_7.png" alt="configuration cloud scheduler 1" class="img-fluid" style="max-width: 30px; height: auto;">
