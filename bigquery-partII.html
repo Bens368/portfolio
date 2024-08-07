@@ -123,7 +123,7 @@
                 Nous tenterons ici de créer un mécanisme de requête API dynamique de la dernière date dans une table du data warehouse jusqu’à la date d’aujourd’hui. De cette manière, on va pouvoir envoyer régulièrement la nouvelle donnée vers notre table sans toucher à la donnée déjà présente.
               </p>
               <p>
-                Spoiler alert : les adjectifs qualificatifs de cette démarche sont « technique » et « fastidieuse ». Je vous recommande donc vivement de lire au préalable la partie 1 juste <a href="#">ici</a>. Nous séparerons en deux grands mécanismes la démarche. Premièrement, il s’agit de récupérer la donnée et de la sauvegarder temporairement dans un bucket. Deuxièmement, il s’agit de l’envoyer à la table souhaitée.
+                Spoiler alert : les adjectifs qualificatifs de cette démarche sont « technique » et « fastidieuse ». Je vous recommande donc vivement de lire au préalable la partie 1 juste <a href="bigquery.html">ici</a>. Nous séparerons en deux grands mécanismes la démarche. Premièrement, il s’agit de récupérer la donnée et de la sauvegarder temporairement dans un bucket. Deuxièmement, il s’agit de l’envoyer à la table souhaitée.
               </p>
               <p>
                 Pour commencer, nous devons ajouter à nos données une dimension de date. Voici une version modifiée du code Python de la partie 1 qui ajoute une colonne de date :
