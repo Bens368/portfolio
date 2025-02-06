@@ -139,6 +139,27 @@ h6 {
   background-color: color-mix(in srgb, #02009B 90%, white 15%);
 }
 
+.scroll-down {
+  position: absolute;
+  bottom: 20px; /* Ajuste selon ton design */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: var(--contrast-color); /* Utilise ta palette existante */
+  animation: bounce 1.5s infinite;
+  cursor: pointer;
+}
+
+/* Animation de rebond */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
