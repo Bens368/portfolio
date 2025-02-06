@@ -56,13 +56,13 @@ body {
 }
 
 a {
-  color: #ff4d00;
+  color: #02009B;
   text-decoration: none;
   transition: 0.3s;
 }
 
 a:hover {
-  color: color-mix(in srgb, #ff4d00, transparent 25%);
+  color: color-mix(in srgb, #02009B, transparent 25%);
   text-decoration: none;
 }
 
@@ -118,7 +118,7 @@ h6 {
 
 .header .header-toggle {
   color: var(--contrast-color);
-  background-color: #ff4d00;
+  background-color: #02009B;
   font-size: 22px;
   display: flex;
   align-items: center;
@@ -136,7 +136,7 @@ h6 {
 
 .header .header-toggle:hover {
   color: var(--contrast-color);
-  background-color: color-mix(in srgb, #ff4d00 90%, white 15%);
+  background-color: color-mix(in srgb, #02009B 90%, white 15%);
 }
 
 /*--------------------------------------------------------------
@@ -199,7 +199,7 @@ h6 {
 .navmenu .active:focus,
 .navmenu li:hover>a {
   color: var(--contrast-color);
-  background: #ff4d00;
+  background: #02009B;
 }
 
 .navmenu a:hover,
@@ -250,7 +250,7 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ff4d00;
+  background: #02009B;
   color: var(--contrast-color);
   line-height: 1;
   margin: 0 4px;
@@ -262,7 +262,7 @@ h6 {
 }
 
 .footer .social-links a:hover {
-  background: color-mix(in srgb, #ff4d00, transparent 20%);
+  background: color-mix(in srgb, #02009B, transparent 20%);
   text-decoration: none;
 }
 
@@ -295,7 +295,7 @@ h6 {
   top: calc(50% - 30px);
   left: calc(50% - 30px);
   border: 6px solid #ffffff;
-  border-color: #ff4d00 transparent #ff4d00 transparent;
+  border-color: #02009B transparent #02009B transparent;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -322,7 +322,7 @@ h6 {
   right: 15px;
   bottom: -15px;
   z-index: 99999;
-  background-color: #ff4d00;
+  background-color: #02009B;
   width: 44px;
   height: 44px;
   border-radius: 50px;
@@ -336,7 +336,7 @@ h6 {
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, #ff4d00, transparent 20%);
+  background-color: color-mix(in srgb, #02009B, transparent 20%);
   color: var(--contrast-color);
 }
 
@@ -359,7 +359,7 @@ h6 {
 # Global Page Titles & Breadcrumbs
 --------------------------------------------------------------*/
 .page-title {
-  --background-color: color-mix(in srgb, #ff4d00, transparent 96%);
+  --background-color: color-mix(in srgb, #02009B, transparent 96%);
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 20px 0;
@@ -440,7 +440,7 @@ section,
   display: block;
   width: 60px;
   height: 3px;
-  background: #ff4d00;
+  background: #02009B;
   left: 0;
   right: 0;
   bottom: 0;
@@ -501,7 +501,7 @@ section,
 
 .hero p span {
   letter-spacing: 1px;
-  border-bottom: 2px solid #ff4d00;
+  border-bottom: 2px solid #02009B;
 }
 
 .hero .social-links {
@@ -518,7 +518,7 @@ section,
 }
 
 .hero .social-links a:hover {
-  color: #ff4d00;
+  color: #02009B;
 }
 
 @media (max-width: 768px) {
@@ -557,7 +557,7 @@ section,
 .about .content ul i {
   font-size: 16px;
   margin-right: 5px;
-  color: #ff4d00;
+  color: #02009B;
   line-height: 0;
 }
 
@@ -565,7 +565,7 @@ section,
 # Stats Section
 --------------------------------------------------------------*/
 .stats i {
-  background-color: #ff4d00;
+  background-color: #02009B;
   color: var(--contrast-color);
   width: 54px;
   height: 54px;
@@ -634,7 +634,7 @@ section,
   width: 1px;
   height: 10px;
   transition: 0.9s;
-  background-color: #ff4d00;
+  background-color: #02009B;
 }
 
 /*--------------------------------------------------------------
@@ -651,7 +651,7 @@ section,
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
-  border-left: 2px solid #ff4d00;
+  border-left: 2px solid #02009B;
   position: relative;
 }
 
@@ -693,7 +693,7 @@ section,
   left: -9px;
   top: 0;
   background: var(--background-color);
-  border: 2px solid #ff4d00;
+  border: 2px solid #02009B;
 }
 
 /*--------------------------------------------------------------
@@ -723,7 +723,7 @@ section,
 .portfolio .portfolio-filters li:hover,
 .portfolio .portfolio-filters li.filter-active {
   color: var(--contrast-color);
-  background-color: #ff4d00;
+  background-color: #02009B;
 }
 
 .portfolio .portfolio-filters li:first-child {
@@ -784,7 +784,7 @@ section,
 
 .portfolio .portfolio-item .portfolio-info .preview-link:hover,
 .portfolio .portfolio-item .portfolio-info .details-link:hover {
-  color: #ff4d00;
+  color: #02009B;
 }
 
 .portfolio .portfolio-item .portfolio-info .details-link {
@@ -934,7 +934,7 @@ section,
 }
 
 .testimonials .testimonial-item .testimonial-content {
-  border-left: 3px solid #ff4d00;
+  border-left: 3px solid #02009B;
   padding-left: 30px;
 }
 
@@ -963,7 +963,7 @@ section,
 
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
-  color: color-mix(in srgb, #ff4d00, transparent 50%);
+  color: color-mix(in srgb, #02009B, transparent 50%);
   font-size: 26px;
   line-height: 0;
 }
@@ -1003,7 +1003,7 @@ section,
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #ff4d00;
+  background-color: #02009B;
 }
 
 /*--------------------------------------------------------------
@@ -1014,8 +1014,8 @@ section,
 }
 
 .contact .info-item i {
-  color: #ff4d00;
-  background: color-mix(in srgb, #ff4d00, transparent 92%);
+  color: #02009B;
+  background: color-mix(in srgb, #02009B, transparent 92%);
   font-size: 20px;
   width: 44px;
   height: 44px;
@@ -1042,7 +1042,7 @@ section,
 }
 
 .contact .info-item:hover i {
-  background: #ff4d00;
+  background: #02009B;
   color: var(--contrast-color);
 }
 
@@ -1085,7 +1085,7 @@ section,
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid #ff4d00;
+  border: 3px solid #02009B;
   border-top-color: var(--background-color);
   animation: animate-loading 1s linear infinite;
 }
@@ -1105,7 +1105,7 @@ section,
 .contact .php-email-form input[type=text]:focus,
 .contact .php-email-form input[type=email]:focus,
 .contact .php-email-form textarea:focus {
-  border-color: #ff4d00;
+  border-color: #02009B;
 }
 
 .contact .php-email-form input[type=text]::placeholder,
@@ -1116,7 +1116,7 @@ section,
 
 .contact .php-email-form button[type=submit] {
   color: var(--contrast-color);
-  background: #ff4d00;
+  background: #02009B;
   border: 0;
   padding: 10px 30px;
   transition: 0.4s;
@@ -1124,7 +1124,7 @@ section,
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, #ff4d00, transparent 25%);
+  background: color-mix(in srgb, #02009B, transparent 25%);
 }
 
 @keyframes animate-loading {
@@ -1194,7 +1194,7 @@ section,
 }
 
 .portfolio-details .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #ff4d00;
+  background-color: #02009B;
 }
 
 .portfolio-details .portfolio-info h3 {
@@ -1211,7 +1211,7 @@ section,
   display: block;
   width: 50px;
   height: 3px;
-  background: #ff4d00;
+  background: #02009B;
   left: 0;
   bottom: 0;
 }
@@ -1237,14 +1237,14 @@ section,
 
 .portfolio-details .portfolio-info .btn-visit {
   padding: 8px 40px;
-  background: #ff4d00;
+  background: #02009B;
   color: var(--contrast-color);
   border-radius: 50px;
   transition: 0.3s;
 }
 
 .portfolio-details .portfolio-info .btn-visit:hover {
-  background: color-mix(in srgb, #ff4d00, transparent 20%);
+  background: color-mix(in srgb, #02009B, transparent 20%);
 }
 
 .portfolio-details .portfolio-description h2 {
@@ -1287,7 +1287,7 @@ section,
 
 .portfolio-details .portfolio-description .testimonial-item .quote-icon-left,
 .portfolio-details .portfolio-description .testimonial-item .quote-icon-right {
-  color: color-mix(in srgb, #ff4d00, transparent 50%);
+  color: color-mix(in srgb, #02009B, transparent 50%);
   font-size: 26px;
   line-height: 0;
 }
@@ -1349,12 +1349,12 @@ section,
 .service-details .services-list a i {
   font-size: 16px;
   margin-right: 8px;
-  color: #ff4d00;
+  color: #02009B;
 }
 
 .service-details .services-list a.active {
   color: var(--contrast-color);
-  background-color: #ff4d00;
+  background-color: #02009B;
 }
 
 .service-details .services-list a.active i {
@@ -1362,8 +1362,8 @@ section,
 }
 
 .service-details .services-list a:hover {
-  background-color: color-mix(in srgb, #ff4d00, transparent 95%);
-  color: #ff4d00;
+  background-color: color-mix(in srgb, #02009B, transparent 95%);
+  color: #02009B;
 }
 
 .service-details .download-catalog a {
@@ -1387,15 +1387,15 @@ section,
 .service-details .download-catalog a i {
   font-size: 24px;
   margin-right: 8px;
-  color: #ff4d00;
+  color: #02009B;
 }
 
 .service-details .download-catalog a:hover {
-  color: #ff4d00;
+  color: #02009B;
 }
 
 .service-details .help-box {
-  background-color: #ff4d00;
+  background-color: #02009B;
   color: var(--contrast-color);
   margin-top: 30px;
   padding: 30px 15px;
@@ -1438,7 +1438,7 @@ section,
 .service-details ul i {
   font-size: 20px;
   margin-right: 8px;
-  color: #ff4d00;
+  color: #02009B;
 }
 
 .single-image {
@@ -1465,7 +1465,7 @@ section,
 
 .innerBar {
   display: block;
-  background-color: #ff4d00;
+  background-color: #02009B;
   height: inherit;
   width: 30%;
 }
@@ -1512,7 +1512,7 @@ section,
 }
 
 .copy-button:hover {
-    color: #ff4d00;
+    color: #02009B;
 }
 
 .copy-button i {
