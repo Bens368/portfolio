@@ -145,9 +145,10 @@ h6 {
   left: 50%;
   transform: translateX(-50%);
   font-size: 24px;
-  color: var(--contrast-color); /* Utilise ta palette existante */
+  color: #02009b; /* Utilise ta palette existante */
   animation: bounce 1.5s infinite;
   cursor: pointer;
+  z-index: 9999;
 }
 
 /* Animation de rebond */
