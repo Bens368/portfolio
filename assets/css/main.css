@@ -139,7 +139,7 @@ h6 {
   background-color: color-mix(in srgb, #02009B 90%, white 15%);
 }
 
-.scroll-down {
+.scroll-icon {
   position: absolute;
   bottom: 20px; /* Ajuste selon ton design */
   left: 50%;
