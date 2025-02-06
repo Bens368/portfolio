@@ -190,7 +190,7 @@ h6 {
 
   .navmenu a span,
   .navmenu a:focus span {
-    display: inline-block;
+    display: inline-block !important;
   }
 }
 
